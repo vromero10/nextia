@@ -8,13 +8,13 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="space-y-12">
+      <main className="space-y-10">
         <Hero />
 
         <Section id="ia" title="Inteligencia Artificial">
           <FancyCard
             ctas={[
-              { href: '/blog', label: 'Ver casos y demos →' },
+              { href: '/ia', label: 'Ver casos y demos →', variant: 'primary' },
               { href: '/contacto', label: 'Hablemos', variant: 'primary' },
             ]}
           >
@@ -24,19 +24,23 @@ export default function Page() {
         </Section>
 
         <Section id="auto" title="Automatización">
-          <FancyCard ctas={[{ href: '/blog', label: 'Aprende cómo →', variant: 'primary' }]}>
-            Flujos y APIs para eliminar tareas repetitivas, integrar sistemas y acelerar decisiones.
-          </FancyCard>
+          <FancyCard
+            ctas={[
+                  { href: '/automatizacion', label: 'Aprende cómo →', variant: 'primary' },
+            ]}
+          >
+           Flujos y APIs para eliminar tareas repetitivas, integrar sistemas y acelerar decisiones.
+           </FancyCard>
         </Section>
 
         <Section id="sec" title="Ciberseguridad">
-          <FancyCard
+        <FancyCard
             ctas={[
-              { href: '/ciberseguridad', label: 'Explorar contenidos →', variant: 'primary' },
+                { href: '/ciberseguridad', label: 'Explorar contenidos →', variant: 'primary' },
             ]}
-          >
+              >
             Entérate de las últimas tendencias en ciberseguridad y aplícalas en tu empresa.
-          </FancyCard>
+        </FancyCard>
         </Section>
 
         <Section id="aqp" title="Arequipa Tech">

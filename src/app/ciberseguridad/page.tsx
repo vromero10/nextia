@@ -1,35 +1,63 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Section from '@/components/Section'
 import Link from 'next/link'
+import Image from 'next/image'
+import { getAllSecPosts } from '@/lib/mdx'
 
-export default function CiberseguridadPage() {
-  const destacados = [
-    {
-      slug: '2025-08-16-ciberseguridad-mvp',
-      title: 'Ciberseguridad para tu MVP en Vercel',
-      excerpt: 'Hardening, cabeceras seguras y mejores prácticas para proteger aplicaciones modernas.'
-    }
-  ]
+export const dynamic = 'force-static'
+
+export default async function CiberseguridadPage() {
+  const posts = await getAllSecPosts()
 
   return (
     <>
       <Header />
-      <main className="space-y-12">
-        <Section id="ciberseguridad" title="Ciberseguridad">
-          <p className="text-muted">Guías y prácticas para proteger aplicaciones modernas.</p>
+      <main className="min-h-screen flex flex-col">
+        <div className="flex-1 mx-auto w-full max-w-3xl px-6 pt-24 pb-24">
+          <header className="mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Ciberseguridad</h1>
+            <p className="mt-2 text-white/80">
+              Noticias, alertas y consejos prácticos para proteger tu empresa y tus datos.
+            </p>
+          </header>
 
-          <ul className="mt-8 grid md:grid-cols-2 gap-6">
-            {destacados.map(p => (
-              <li key={p.slug} className="p-4 rounded-2xl border border-white/10 bg-black/20 hover:bg-black/40 transition">
-                <h3 className="text-xl font-semibold mb-2">
-                  <Link href={`/blog/${p.slug}`} className="hover:text-primary">{p.title}</Link>
-                </h3>
-                <p className="text-sm text-muted">{p.excerpt}</p>
+          <ul className="space-y-8">
+            {posts.map(p => (
+              <li key={p.slug} className="section-panel overflow-hidden">
+                {p.image && (
+                  <Link href={`/ciberseguridad/${p.slug}`}>
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      width={1600}
+                      height={900}
+                      className="h-56 md:h-80 w-full object-cover"
+                    />
+                  </Link>
+                )}
+                <div className="p-6 md:p-8">
+                  <div className="text-sm text-white/60">{p.date}</div>
+                  <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
+                    <Link href={`/ciberseguridad/${p.slug}`} className="hover:text-white/90">
+                      {p.title}
+                    </Link>
+                  </h2>
+                  {p.excerpt && (
+                    <p className="mt-3 text-lg leading-relaxed text-white/90">{p.excerpt}</p>
+                  )}
+                  <div className="mt-6">
+                    <Link href={`/ciberseguridad/${p.slug}`} className="btn">
+                      Leer nota completa →
+                    </Link>
+                  </div>
+                </div>
               </li>
             ))}
+            {posts.length === 0 && (
+              <li className="text-white/80">Aún no hay notas de Ciberseguridad.</li>
+            )}
           </ul>
-        </Section>
+        </div>
       </main>
       <Footer />
     </>
