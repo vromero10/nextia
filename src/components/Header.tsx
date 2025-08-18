@@ -8,16 +8,39 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-8">
         
         {/* Logo / Nombre */}
-        <Link href="/" className="text-3xl font-extrabold text-white tracking-wide hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] transition">
+        <Link 
+          href="/" 
+          className="text-3xl font-extrabold text-white tracking-wide hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] transition"
+        >
           GenIAtech
         </Link>
 
         {/* Menú */}
         <nav className="flex gap-8">
-          <Link href="/" className="text-lg text-white hover:text-blue-400 transition">Inicio</Link>
-          <Link href="/blog" className="text-lg text-white hover:text-blue-400 transition">Blog</Link>
-          <Link href="/arequipa-tech" className="text-lg text-white hover:text-blue-400 transition">Arequipa Tech</Link>
-          <Link href="/contacto" className="text-lg text-white hover:text-pink-400 transition">Contacto</Link>
+          <Link 
+            href="/" 
+            className="text-lg text-white transition hover:drop-shadow-[0_0_10px_rgba(173,216,230,0.8)] hover:text-blue-300"
+          >
+            Inicio
+          </Link>
+          <Link 
+            href="/blog" 
+            className="text-lg text-white transition hover:drop-shadow-[0_0_10px_rgba(173,216,230,0.8)] hover:text-blue-300"
+          >
+            Blog
+          </Link>
+          <Link 
+            href="/arequipa-tech" 
+            className="text-lg text-white transition hover:drop-shadow-[0_0_10px_rgba(173,216,230,0.8)] hover:text-blue-300"
+          >
+            Arequipa Tech
+          </Link>
+          <Link 
+            href="/contacto" 
+            className="text-lg text-white transition hover:drop-shadow-[0_0_10px_rgba(255,192,203,0.8)] hover:text-pink-300"
+          >
+            Contacto
+          </Link>
         </nav>
       </div>
     </header>

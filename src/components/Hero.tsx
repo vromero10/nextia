@@ -12,10 +12,25 @@ export default function Hero() {
 <p className="text-xl md:text-2xl text-gray-200 text-center mt-6">
   Inteligencia Artificial aplicada para empresas de Arequipa y LATAM.
 </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="#ia" className="btn btn-primary">Descubre cómo</Link>
-          <Link href="/contacto" className="btn btn-secondary">Escríbenos</Link>
-        </div>
+<div className="mt-8 flex justify-center gap-4 sm:gap-6">
+  <a
+    href="/#ia"
+    className="inline-flex items-center px-8 md:px-10 py-4 md:py-5 text-xl md:text-2xl font-semibold text-white
+               bg-blue-600 rounded-2xl hover:bg-blue-700 hover:scale-105
+               hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-transform"
+  >
+    Descubre cómo
+  </a>
+
+  <a
+    href="/contacto"
+    className="inline-flex items-center px-8 md:px-10 py-4 md:py-5 text-xl md:text-2xl font-semibold text-white
+               bg-pink-600 rounded-2xl hover:bg-pink-700 hover:scale-105
+               hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-transform"
+  >
+    Escríbenos
+  </a>
+</div>
       </div>
     </section>
   )

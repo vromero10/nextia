@@ -43,3 +43,13 @@ a { @apply text-blue-400 hover:text-blue-300 underline-offset-4; }
     animation: sparkFloat 3.5s ease-in-out infinite;
     filter: blur(.5px);
   }
+
+  .link-glow {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .link-glow:hover {
+    text-shadow: 0 0 8px rgba(173, 216, 230, 0.8), 
+                 0 0 16px rgba(173, 216, 230, 0.6);
+    color: #add8e6; /* mismo azul claro del logo */
+  }
